@@ -48,7 +48,7 @@ public class KhoaController {
     }
 
     @DeleteMapping("/khoas/{id}")
-    public Map<String, Boolean> deleteEmployee(@PathVariable(value = "id") Integer khoaId)
+    public Map<String, Boolean> deleteKhoa(@PathVariable(value = "id") Integer khoaId)
             throws ResourceNotFoundException{
         Khoa khoa=khoaRepository.findById(khoaId).
                 orElseThrow(() -> new ResourceNotFoundException("Không tìm thấy khoa với mã :: " + khoaId));
