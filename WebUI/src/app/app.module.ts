@@ -3,16 +3,27 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CreateSinhvienComponent } from './sinhvien/create-sinhvien/create-sinhvien.component';
+import { ListSinhvienComponent } from './sinhvien/list-sinhvien/list-sinhvien.component';
+import { UpdateSinhvienComponent } from './sinhvien/update-sinhvien/update-sinhvien.component';
+import { SinhVienService } from './service/sinhvien.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreateSinhvienComponent,
+    ListSinhvienComponent,
+    UpdateSinhvienComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [SinhVienService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

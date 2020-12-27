@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Employee List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th >Mã sinh viên</th>
+            <th >Tên sinh viên</th>
+            <th >Ngày sinh</th>
+            <th >Lớp</th>
+            <th>Khoa</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sinhvien of danhsachsinhvien | async">
+            <td>{{sinhvien.maSV}}</td>
+            <td>{{sinhvien.tenSV}}</td>
+            <td>{{sinhvien.ngaysinh}}</td>
+            <td>{{sinhvien.lop}}</td>
+            <td>{{sinhvien.khoa}}</td>
+            <td>
+                <button style='margin-right:16px' (click)="deleteSinhVien(sinhvien.maSV)" class="btn btn-danger">Delete</button>
+                <button style='margin-right:16px' (click)="updateSinhVien(sinhvien.maSV)" class="btn btn-success" style="margin-left: 10px">Edit details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
