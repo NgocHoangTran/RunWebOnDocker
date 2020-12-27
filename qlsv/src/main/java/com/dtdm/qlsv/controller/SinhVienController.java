@@ -18,12 +18,12 @@ public class SinhVienController {
     @Autowired
     private SinhVienRepository sinhVienRepository;
 
-    @GetMapping("/sinhviens")
+    @GetMapping("/listsinhviens")
     public List<SinhVien> getAllsinhViens(){
         return sinhVienRepository.findAll();
     }
 
-    @GetMapping("/sinhviens/{id}")
+    @GetMapping("/listsinhviens/{id}")
     public ResponseEntity<SinhVien> getSinhVienId(@PathVariable(value = "id") Integer sinhvienId)
             throws ResourceNotFoundException {
         SinhVien sinhVien=sinhVienRepository.findById(sinhvienId).
@@ -31,12 +31,12 @@ public class SinhVienController {
         return ResponseEntity.ok().body(sinhVien);
     }
 
-    @PostMapping("/sinhviens")
+    @PostMapping("/listsinhviens")
     public SinhVien createSinhvien(@Valid @RequestBody SinhVien sinhVien){
         return sinhVienRepository.save(sinhVien);
     }
 
-    @PutMapping("/sinhviens/{id}")
+    @PutMapping("/listsinhviens/{id}")
     public ResponseEntity<SinhVien> updateSinhVien(@PathVariable(value = "id") Integer sinhVienId,
                                            @Valid @RequestBody SinhVien sinhVienDetails) throws ResourceNotFoundException{
         SinhVien sinhVien=sinhVienRepository.findById(sinhVienId).
@@ -44,13 +44,13 @@ public class SinhVienController {
         sinhVien.setMa_SV(sinhVienDetails.getMa_SV());
         sinhVien.setTen_SV(sinhVienDetails.getTen_SV());
         sinhVien.setNgay_Sinh(sinhVienDetails.getNgay_Sinh());
-        sinhVien.setLop(sinhVienDetails.getLop());
-        sinhVien.setKhoa(sinhVienDetails.getKhoa());
+        sinhVien.setTen_Lop(sinhVienDetails.getTen_Lop());
+        sinhVien.setTen_Khoa(sinhVienDetails.getTen_Khoa());
         final SinhVien updateSinhVien=sinhVienRepository.save(sinhVien);
         return ResponseEntity.ok(updateSinhVien);
     }
 
-    @DeleteMapping("/sinhviens/{id}")
+    @DeleteMapping("/listsinhviens/{id}")
     public Map<String, Boolean> deleteSinhVien(@PathVariable(value = "id") Integer sinhVienId)
             throws ResourceNotFoundException{
         SinhVien sinhVien=sinhVienRepository.findById(sinhVienId).

@@ -6,6 +6,33 @@ import java.util.Date;
 @Entity
 @Table(name = "SINHVIEN")
 public class SinhVien {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int ma_SV;
+
+    @Column(name = "ten_SV")
+    private String ten_SV;
+
+    @Column(name="ngay_Sinh")
+    private Date ngay_Sinh;
+
+    @Column(name="ten_Lop")
+    private String ten_Lop;
+
+    @Column(name="ten_Khoa")
+    private String ten_Khoa;
+
+    public SinhVien() {
+    }
+
+    public SinhVien(int ma_SV, String ten_SV, Date ngay_Sinh, String ten_Lop, String ten_Khoa) {
+        this.ma_SV = ma_SV;
+        this.ten_SV = ten_SV;
+        this.ngay_Sinh = ngay_Sinh;
+        this.ten_Lop = ten_Lop;
+        this.ten_Khoa = ten_Khoa;
+    }
+
     public int getMa_SV() {
         return ma_SV;
     }
@@ -30,49 +57,19 @@ public class SinhVien {
         this.ngay_Sinh = ngay_Sinh;
     }
 
-    public Khoa getKhoa() {
-        return khoa;
+    public String getTen_Lop() {
+        return ten_Lop;
     }
 
-    public void setKhoa(Khoa khoa) {
-        this.khoa = khoa;
+    public void setTen_Lop(String ten_Lop) {
+        this.ten_Lop = ten_Lop;
     }
 
-    public Lop getLop() {
-        return lop;
+    public String getTen_Khoa() {
+        return ten_Khoa;
     }
 
-    public void setLop(Lop lop) {
-        this.lop = lop;
+    public void setTen_Khoa(String ten_Khoa) {
+        this.ten_Khoa = ten_Khoa;
     }
-
-    public SinhVien(int ma_SV, String ten_SV, Date ngay_Sinh, Khoa khoa, Lop lop) {
-        this.ma_SV = ma_SV;
-        this.ten_SV = ten_SV;
-        this.ngay_Sinh = ngay_Sinh;
-        this.khoa = khoa;
-        this.lop = lop;
-    }
-
-    public SinhVien() {
-    }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ma_SV;
-
-    @Column(name = "ten_SV")
-    private String ten_SV;
-
-    @Column(name="ngay_Sinh")
-    private Date ngay_Sinh;
-
-    @ManyToOne
-    @JoinColumn(name = "ma_Khoa")
-    private Khoa khoa;
-
-    @ManyToOne
-    @JoinColumn(name = "ma_Lop")
-    private Lop lop;
-
 }
