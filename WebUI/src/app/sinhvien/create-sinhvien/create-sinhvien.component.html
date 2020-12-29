@@ -3,27 +3,27 @@
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Mã sinh viên</label>
-      <input type="text" class="form-control" id="maSV" required [(ngModel)]="sinhvien.maSV" name="maSV">
+      <input type="text" class="form-control" id="maSV" required [(ngModel)]="sinhvien.ma_SV" name="maSV">
     </div>
 
     <div class="form-group">
       <label for="name">Tên sinh viên</label>
-      <input type="text" class="form-control" id="tenSV" required [(ngModel)]="sinhvien.tenSV" name="tenSV">
+      <input type="text" class="form-control" id="tenSV" required [(ngModel)]="sinhvien.ten_SV" name="tenSV">
     </div>
 
     <div class="form-group">
       <label for="name">Ngày sinh</label>
-      <input type="date" class="form-control" id="ngaysinh" required [(ngModel)]="sinhvien.ngaysinh" name="ngaysinh">
+      <input type="date" class="form-control" id="ngaysinh" required [(ngModel)]="sinhvien.ngay_Sinh" name="ngaysinh">
     </div>
     <div class="form-group">
       <label for="name">Lớp</label>
-      <input type="text" class="form-control" id="lop" required [(ngModel)]="sinhvien.lop" name="lop">
+      <input type="text" class="form-control" id="lop" required [(ngModel)]="sinhvien.ten_Lop" name="lop">
     </div>
     <div class="form-group">
         <label for="name">Khoa</label>
-        <input type="text" class="form-control" id="khoa" required [(ngModel)]="sinhvien.khoa" name="khoa">
+        <input type="text" class="form-control" id="khoa" required [(ngModel)]="sinhvien.ten_Khoa" name="khoa">
       </div>
 
-    <button class="btn btn-success">Submit</button>
+    <button class="btn btn-success" type="submit">Submit</button>
   </form>
 </div>

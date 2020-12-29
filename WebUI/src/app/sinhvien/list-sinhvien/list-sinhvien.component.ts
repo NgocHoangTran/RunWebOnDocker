@@ -12,15 +12,20 @@ import { SinhVienService } from 'src/app/service/sinhvien.service';
 })
 export class ListSinhvienComponent implements OnInit {
 
-  danhsachsinhvien !: Observable<SinhVien[]>;
+  listsinhviens !: Observable< SinhVien[]>;
   constructor(private sinhvienService:SinhVienService, private router:Router) { }
 
   ngOnInit(): void {
-    this.sinhvienService.getSinhVien();
+    this.listsinhviens= this.sinhvienService.getSinhVien();
   }
+  
+
+
   reloadData() {
-    this.danhsachsinhvien= this.sinhvienService.getSinhVien();
+    this.listsinhviens = this.sinhvienService.getSinhVien();
   }
+  
+
   deleteSinhVien(maSV: number) {
     this.sinhvienService.deleteSinhVien(maSV)
       .subscribe(
@@ -28,11 +33,11 @@ export class ListSinhvienComponent implements OnInit {
           console.log(data);
           this.reloadData();
         },
-        error => console.log(error));
+      error => console.log(error));
   }
-  updateSinhVien(maSV:number)
-  {
-    this.router.navigate(['update',maSV])
-  }
+   updateSinhVien(ma_SV:number)
+   {
+    this.router.navigate(['/listsinhviens', ma_SV])
+   }
 
 }

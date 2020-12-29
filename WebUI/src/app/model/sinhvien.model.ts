@@ -1,7 +1,7 @@
 export class SinhVien{
-    maSV !: number;
-    tenSV !: String;
-    ngaysinh !: Date;
-    lop !: String;
-    khoa !: String;
+    ma_SV !: number;
+    ten_SV !: String;
+    ngay_Sinh !: Date;
+    ten_Lop !: String;
+    ten_Khoa !: String;
 }

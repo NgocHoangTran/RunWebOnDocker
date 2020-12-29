@@ -9,7 +9,7 @@ import { SinhVien } from '../model/sinhvien.model';
 export class SinhVienService {
 
   constructor(private http: HttpClient) { }
-  private baseUrl: string = 'http://localhost:8080/api/ListSinhVien/';
+  private baseUrl  = "http://localhost:8080/qlsv/api/sinhvien/listsinhviens/";
 
   
 
@@ -21,15 +21,15 @@ export class SinhVienService {
     return this.http.get(this.baseUrl + id);
   }
 
-  createSinhVien(sinhvien: SinhVien): Observable<ApiResponse> {
-    return this.http.post<ApiResponse>(this.baseUrl, sinhvien);
+  createSinhVien(sinhvien: SinhVien): Observable<object> {
+    return this.http.post<object>("http://localhost:8080/qlsv/api/sinhvien/createsinhvien", sinhvien);
   }
 
-  updateSinhVien(maSV: number, sinhvien: SinhVien): Observable<ApiResponse> {
-    return this.http.put<ApiResponse>(this.baseUrl + sinhvien.maSV, sinhvien);
+  updateSinhVien(ma_SV: number, sinhvien: SinhVien): Observable<object> {
+    return this.http.put<object>(this.baseUrl + sinhvien.ma_SV, sinhvien);
   }
 
-  deleteSinhVien(maSV: number): Observable<ApiResponse> {
-    return this.http.delete<ApiResponse>(this.baseUrl + maSV);
+  deleteSinhVien(ma_SV: number): Observable<ApiResponse> {
+    return this.http.delete<ApiResponse>(this.baseUrl + ma_SV);
   }
 }

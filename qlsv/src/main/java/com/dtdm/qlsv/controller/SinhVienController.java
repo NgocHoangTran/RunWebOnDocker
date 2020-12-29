@@ -31,7 +31,7 @@ public class SinhVienController {
         return ResponseEntity.ok().body(sinhVien);
     }
 
-    @PostMapping("/listsinhviens")
+    @PostMapping("/createsinhvien")
     public SinhVien createSinhvien(@Valid @RequestBody SinhVien sinhVien){
         return sinhVienRepository.save(sinhVien);
     }
@@ -58,6 +58,6 @@ public class SinhVienController {
         sinhVienRepository.delete(sinhVien);
         Map<String, Boolean> response= new HashMap<>();
         response.put("deleted", Boolean.TRUE);
-        return  response;
+        return response;
     }
 }

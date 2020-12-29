@@ -6,9 +6,9 @@ import { UpdateSinhvienComponent } from './sinhvien/update-sinhvien/update-sinhv
 
 const routes: Routes = [
   {path:'', redirectTo:'sinhvien', pathMatch:'full'},
-  {path: 'add', component: CreateSinhvienComponent},
-  {path:'danhsachsinhvien', component:ListSinhvienComponent},
-  {path:'update', component:UpdateSinhvienComponent}
+  {path: 'createsinhvien', component: CreateSinhvienComponent},
+  {path:'listsinhviens', component:ListSinhvienComponent},
+  {path:'listsinhviens/:ma_SV', component:UpdateSinhvienComponent}
 ];
 
 @NgModule({

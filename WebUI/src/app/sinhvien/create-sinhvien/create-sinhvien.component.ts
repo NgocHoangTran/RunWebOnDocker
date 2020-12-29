@@ -17,10 +17,10 @@ export class CreateSinhvienComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+ 
   onSubmit(){
     this.sinhvienService.createSinhVien(this.sinhvien).subscribe(data=> console.log(data), error=> console.log(error));
     this.sinhvien= new SinhVien();
-    this.router.navigate(['/add'])
+    this.router.navigate(['/listsinhviens'])
   }
 }

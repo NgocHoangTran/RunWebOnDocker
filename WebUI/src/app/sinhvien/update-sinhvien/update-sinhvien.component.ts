@@ -11,29 +11,28 @@ import { SinhVienService } from 'src/app/service/sinhvien.service';
 })
 export class UpdateSinhvienComponent implements OnInit {
 
-  maSV !: number;
+  ma_SV !: number;
   sinhvien !: SinhVien;
-  apiresponse!:ApiResponse;
 
   constructor(private route: ActivatedRoute,private router: Router,
     private sinhvienService: SinhVienService) { }
 
   ngOnInit(): void {
     this.sinhvien= new SinhVien();
-    this.maSV= this.route.snapshot.params['maSV'];
-    this.sinhvienService.getSinhVienBymaSV(this.maSV).subscribe(data => {
+    this.ma_SV= this.route.snapshot.params['ma_SV'];
+    this.sinhvienService.getSinhVienBymaSV(this.ma_SV).subscribe(data => {
       console.log(data)
       this.sinhvien = data;
     }, error => console.log(error));
   }
 
   onSubmit() {
-    this.sinhvienService.updateSinhVien(this.maSV, this.sinhvien)
+    this.sinhvienService.updateSinhVien(this.ma_SV, this.sinhvien)
       .subscribe(data => console.log(data), error => console.log(error));
     this.sinhvien = new SinhVien();
-    this.router.navigate(['/danhsachsinhvien']);
+    this.router.navigate(['/listsinhviens']);
     }
     list(){
-      this.router.navigate(['/danhsachsinhvien']);
+      this.router.navigate(['/listsinhviens']);
     }
 }
