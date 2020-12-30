@@ -29,7 +29,7 @@ export class SinhVienService {
     return this.http.put<object>(this.baseUrl + sinhvien.ma_SV, sinhvien);
   }
 
-  deleteSinhVien(ma_SV: number): Observable<ApiResponse> {
-    return this.http.delete<ApiResponse>(this.baseUrl + ma_SV);
+  deleteSinhVien(ma_SV: number): Observable<any> {
+    return this.http.delete<any>("http://localhost:8080/qlsv/api/sinhvien/deletesinhvien/" + ma_SV);
   }
 }

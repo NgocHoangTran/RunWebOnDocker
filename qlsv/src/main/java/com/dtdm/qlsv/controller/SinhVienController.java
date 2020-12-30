@@ -50,7 +50,7 @@ public class SinhVienController {
         return ResponseEntity.ok(updateSinhVien);
     }
 
-    @DeleteMapping("/listsinhviens/{id}")
+    @DeleteMapping("/deletesinhvien/{id}")
     public Map<String, Boolean> deleteSinhVien(@PathVariable(value = "id") Integer sinhVienId)
             throws ResourceNotFoundException{
         SinhVien sinhVien=sinhVienRepository.findById(sinhVienId).
