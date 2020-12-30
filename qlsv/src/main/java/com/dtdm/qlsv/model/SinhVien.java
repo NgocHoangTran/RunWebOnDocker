@@ -1,13 +1,13 @@
 package com.dtdm.qlsv.model;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name = "SINHVIEN")
 public class SinhVien {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name ="ma_SV")
     private int ma_SV;
 
     @Column(name = "ten_SV")
