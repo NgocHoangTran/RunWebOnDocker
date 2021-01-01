@@ -1,0 +1,13 @@
+version: '3.8'
+services: 
+  mysql-standa:
+    image: 'mysql:8.0'
+    environment: 
+      - MYSQL_ROOT_PASSWORD=010900
+      - MYSQL_PASSWORD=010900
+      - MYSQL_DATABASE=quanlysinhvien
+    ports: 
+      - "3036:3036"
+  qlsv:
+    image: 
+      
