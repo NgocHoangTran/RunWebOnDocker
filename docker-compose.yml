@@ -1,13 +1,33 @@
-version: '3.8'
-services: 
-  mysql-standa:
-    image: 'mysql:8.0'
-    environment: 
-      - MYSQL_ROOT_PASSWORD=010900
-      - MYSQL_PASSWORD=010900
+version: '3'
+services:
+  mysql-standalone:
+    image: 'mysql:8'
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=quanlysinhvien
-    ports: 
-      - "3036:3036"
-  qlsv:
-    image: 
+      - MYSQL_USER=sa
+      - MYSQL_PASSWORD=password
+    ports:
+      - 3307:3306
+
+  quanlysinhvien:
+    image: 'hungcr07/quanlysinhvien:spring-boot'
+    restart: on-failure
+    depends_on:
+      - mysql-standalone
+    ports:
+      - 8080:8080
+    environment:
+      - DATABASE_HOST=mysql-standalone
+      - DATABASE_USER=sa
+      - DATABASE_PASSWORD=password
+      - DATABASE_NAME=quanlysinhvien
+      - DATABASE_PORT=3306
+
+  angular-app:
+    image: 'ngochoang010900/webui:webui'
+    ports:
+    - 4200:80
+
+
       
