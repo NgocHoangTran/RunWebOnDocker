@@ -5,4 +5,4 @@ CREATE TABLE `SINHVIEN` (
   `ten_Lop` varchar(250) NOT NULL,
     `ten_Khoa` varchar(250) NOT NULL,
   PRIMARY KEY (`ma_SV`)
-)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
