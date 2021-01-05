@@ -33,7 +33,7 @@ services:
       context: ./WebUI
       dockerfile: ./Dockerfile
     ports:
-      - 1298:80
+      - 8086:80
 
 
 
