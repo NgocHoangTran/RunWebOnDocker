@@ -1,0 +1,4 @@
+com\dtdm\qlsv\model\SinhVien.class
+com\dtdm\qlsv\QlsvApplication.class
+com\dtdm\qlsv\repository\SinhVienRepository.class
+com\dtdm\qlsv\controller\SinhVienController.class
