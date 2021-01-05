@@ -11,7 +11,10 @@ services:
       - 3307:3306
 
   quanlysinhvien:
-    image: 'hungcr07/quanlysinhvien:spring-boot'
+    image: 'quanlysinhvien'
+    build:
+      context: ./Spring-boot
+      dockerfile: ./Dockerfile
     restart: on-failure
     depends_on:
       - mysql-standalone
@@ -24,10 +27,13 @@ services:
       - DATABASE_NAME=quanlysinhvien
       - DATABASE_PORT=3306
 
-  angular-app:
-    image: 'ngochoang010900/webui:webui'
+  webui:
+    image: 'web-ui'
+    build:
+      context: ./WebUI
+      dockerfile: ./Dockerfile
     ports:
-    - 4200:80
+      - 4200:80
 
 
-      
+

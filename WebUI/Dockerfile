@@ -7,7 +7,6 @@ RUN npm install -g @angular/cli
 COPY . .
 RUN npm run build --prod
 
-
-FROM amd64/nginx:1.18.0-alpine
+FROM nginx
 COPY --from=build-WebUI /app/dist/WebUI /usr/share/nginx/html
-EXPOSE 4200
+EXPOSE 80

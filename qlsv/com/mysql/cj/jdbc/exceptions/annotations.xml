@@ -1,5 +1,0 @@
-<root>
-    <item name='com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping java.sql.SQLException translateException(java.lang.Throwable, com.mysql.cj.exceptions.ExceptionInterceptor)'>
-        <annotation name='java.lang.Deprecated'/>
-    </item>
-</root>
