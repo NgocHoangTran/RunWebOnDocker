@@ -9,4 +9,4 @@ RUN npm run build --prod
 
 FROM nginx
 COPY --from=build-WebUI /app/dist/WebUI /usr/share/nginx/html
-EXPOSE 4200
+EXPOSE 80
