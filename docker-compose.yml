@@ -27,8 +27,8 @@ services:
       - DATABASE_NAME=quanlysinhvien
       - DATABASE_PORT=3306
 
-  webui:
-    image: 'web-ui'
+  web-ui-qlsv:
+    image: 'web-ui-qlsv'
     build:
       context: ./WebUI
       dockerfile: ./Dockerfile
